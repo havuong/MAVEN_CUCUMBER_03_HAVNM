@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/java/features", glue = "stepDefinitions", monochrome = true, plugin = { "pretty",
 		"html:target/cucumber",
-		"junit:target/cucumber/cucumber.xml" }, snippets = SnippetType.CAMELCASE, tags = { "@account" })
+		"junit:target/cucumber/cucumber.xml" }, snippets = SnippetType.CAMELCASE, tags = { "@payment" })
 
 public class RunCucumber {
 

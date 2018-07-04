@@ -1,32 +1,35 @@
-@tag
-Feature: Payment feature
-  As an automation tester
-  I want to create new customer
-  So that I want to make sure payment correctly
+Feature: PAYMENT FUNCTION
+  As an Automation Test
+  I want to create an Account
+  So that I can verify register function work well
 
-  @login
-  Scenario: Login
-    Given I navigate to bank guru site
-    When I input username and password
-    And I click to Login button
-    Then I verify Homepage displayed
+  @payment
+  Scenario: [PAYMENT] - CREATE NEW ACCOUNT
+    Given I get login url
+    When I click to here link
+    And I input to email textbox
+    And I click to submit button at register page
+    Then I get to username information
+    And I get to password information
 
-  @newCustomer
-  Scenario: Create new Customer and get NewCustomerID
-    Given I open New Customer page
-    And Input data to all fields required
-      | CustomerName | Gender | DateOfBirth | Address | City | State | PIN    | Phone     | Email      | Password |
-      | Ha Vuong     | f      | 11/11/1991  | HCM     | HCM  | HCM   | 456789 | 123456789 | automation |   123456 |
-    And Click to Submit button
-    Then Verify Customer created successfully with message "Customer Registered Successfully!!!"
-    And Customer infomation should be shown
-      | CustomerName | Birthday   | City | Address | Phone       | Email    |
-      | Ha Vuong     | 11/11/1991 | HCM  | HCM     | 01223456789 | autotest |
-    And Get CustomerID for edit customer function
+  @payment
+  Scenario: [PAYMENT] - LOGIN WITH INFORMATION ABOVE
+    Given I open to login page
+    When I input to usernam textbox
+    And I input to password textbox
+    And I click to submit button at login page
+    Then Verify homepage welcome message displayed
 
-  @editCustomer
-  Scenario: Edit Customer
-    Given I open Edit Customer page
-    When Input CustomerID
-    And Click to Submit button
-    And I quit browser
+  Scenario Outline: [PAYMENT] - CREATE NEW CUSTOMER
+    Given I click to New Customer page
+    When I input all infomation to this page
+      | CustomerName   | Gender   | DateOfBirth   | Address   | City   | State   | Pin   | Phone   | Email   | Password   |
+      | <CustomerName> | <Gender> | <DateOfBirth> | <Address> | <City> | <State> | <Pin> | <Phone> | <Email> | <Password> |
+    And I click to Submit button
+    Then I verify customer created success with infomation
+      | CustomerName   | Gender   | DateOfBirth   | Address   | City   | State   | Pin   | Phone   | Email   | Password   |
+      | <CustomerName> | <Gender> | <DateOfBirth> | <Address> | <City> | <State> | <Pin> | <Phone> | <Email> | <Password> |
+
+    Examples: 
+      | CustomerName  | Gender | DateOfBirth | Address     | City   | State     | Pin    | Phone      | Email  | Password |
+      | Manual Tester | male   | 01/02/2001  | 234 Address | Ha noi | Long Bien | 123456 | 0123654987 | manual |   123456 |
