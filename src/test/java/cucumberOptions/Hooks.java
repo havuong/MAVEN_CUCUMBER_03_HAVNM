@@ -19,16 +19,16 @@ public class Hooks {
 
 	@Before
 	public synchronized static WebDriver openBrowser() {
-//		String browser = System.getProperty("BROWSER");
-		String browser = "firefox";
+		String browser = System.getProperty("BROWSER");
+		// String browser = "firefox";
 		if (driver == null) {
 			try {
-				/*if (browser == null) {
+				if (browser == null) {
 					browser = System.getenv("BROWSER");
 					if (browser == null) {
 						browser = "firefox";
 					}
-				}*/
+				}
 
 				switch (browser) {
 				case "chrome":

@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import commons.AbstractTest;
 import cucumber.api.java.en.When;
 import cucumberOptions.Hooks;
-import pages.NewCustomerPagePO;
 import pages.PageFactoryManager;
 import pages.RegisterPagePO;
 

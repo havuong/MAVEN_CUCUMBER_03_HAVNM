@@ -3,7 +3,7 @@ Feature: PAYMENT FUNCTION
   As an Automation Test
   I want to payment
   So that I can verify payment function work well
-@payment
+
   Scenario: [PAYMENT] - CREATE NEW ACCOUNT
     Given I get login url
     When I click to here link
@@ -18,7 +18,7 @@ Feature: PAYMENT FUNCTION
     And I input to password textbox
     And I click to submit button at login page
     Then verify homepage welcome message displayed
-
+@payment
   Scenario Outline: [PAYMENT] - CREATE NEW CUSTOMER
     Given I click to New customer page
     When I input all information to this page
