@@ -18,7 +18,6 @@ import pages.PageFactoryManager;
 public class NewCustomerPageSteps {
 	WebDriver driver;
 	int emailUnique;
-	String customerName, dob, address, city, state, pin, mobile, email, pass;
 
 	private NewCustomerPagePO newCustomerPage;
 	private AbstractPage abstractPage;

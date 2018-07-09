@@ -8,16 +8,17 @@ import cucumberOptions.Hooks;
 import pages.PageFactoryManager;
 import pages.RegisterPagePO;
 
-public class RegisterPageSteps {
+public class RegisterPageSteps extends ShareData {
 	WebDriver driver;
 	private RegisterPagePO registerPage;
-	String username, password, loginUrl = "http://demo.guru99.com/v4/";
 	private AbstractTest abstractTest;
+	private ShareData shareData;
 
-	public RegisterPageSteps() {
+	public RegisterPageSteps(ShareData shareData) {
 		driver = Hooks.openBrowser();
 		registerPage = PageFactoryManager.getRegisterPage(driver);
 		abstractTest = new AbstractTest();
+		this.shareData = shareData;
 	}
 
 	@When("^I input to email textbox$")
@@ -32,16 +33,16 @@ public class RegisterPageSteps {
 
 	@When("^I get to username information$")
 	public void iGetToUsernameInformation() {
-		username = registerPage.getUserIDInfo();
+		shareData.username = registerPage.getUserIDInfo();
 	}
 
 	@When("^I get to password information$")
 	public void iGetToPasswordInformation() {
-		password = registerPage.getPasswordInfo();
+		shareData.password = registerPage.getPasswordInfo();
 	}
 
 	@When("^I open to login page$")
 	public void iOpenToLoginPage() {
-		registerPage.openLoginPage(loginUrl);
+		registerPage.openLoginPage(shareData.loginUrl);
 	}
 }

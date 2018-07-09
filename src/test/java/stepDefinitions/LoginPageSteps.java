@@ -2,26 +2,27 @@ package stepDefinitions;
 
 import org.openqa.selenium.WebDriver;
 
-import pages.PageFactoryManager;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import cucumberOptions.Hooks;
 import pages.LoginPagePO;
+import pages.PageFactoryManager;
 
-public class LoginPageSteps {
+public class LoginPageSteps extends ShareData{
 	WebDriver driver;
-	String username = "mngr141058", password = "UbehEqy", loginUrl;
 
 	private LoginPagePO loginPage;
+	private ShareData shareData;
 
-	public LoginPageSteps() {
+	public LoginPageSteps(ShareData shareData) {
 		driver = Hooks.openBrowser();
 		loginPage = PageFactoryManager.getLoginPage(driver);
+		this.shareData = shareData;
 	}
 
 	@Given("^I get login url$")
 	public void iGetLoginUrl() {
-		loginUrl = loginPage.getLoginPageUrl();
+		shareData.loginUrl = loginPage.getLoginPageUrl();
 	}
 
 	@When("^I click to here link$")
@@ -31,12 +32,12 @@ public class LoginPageSteps {
 
 	@When("^I input to username textbox$")
 	public void iInputToUsernameTextbox() {
-		loginPage.inputToUsernameTextbox(username);
+		loginPage.inputToUsernameTextbox(shareData.username);
 	}
 
 	@When("^I input to password textbox$")
 	public void iInputToPasswordTextbox() {
-		loginPage.inputToPasswordTextbox(password);
+		loginPage.inputToPasswordTextbox(shareData.password);
 	}
 
 	@When("^I click to submit button at login page$")

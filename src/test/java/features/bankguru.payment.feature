@@ -1,4 +1,4 @@
-
+@payment
 Feature: PAYMENT FUNCTION
   As an Automation Test
   I want to payment
@@ -11,14 +11,14 @@ Feature: PAYMENT FUNCTION
     And I click to submit button at register page
     Then I get to username information
     And I get to password information
-@payment
+
   Scenario: [PAYMENT] - LOGIN WITH INFORMATION ABOVE
     Given I open to login page
     When I input to username textbox
     And I input to password textbox
     And I click to submit button at login page
     Then verify homepage welcome message displayed
-@payment
+
   Scenario Outline: [PAYMENT] - CREATE NEW CUSTOMER
     Given I click to New customer page
     When I input all information to this page
