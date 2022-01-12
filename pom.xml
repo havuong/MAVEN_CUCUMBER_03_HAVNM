@@ -8,7 +8,7 @@
 
 	<properties>
 		<cucumber.version> 1.2.5 </cucumber.version>
-		<selenium.version> 2.53.1 </selenium.version>
+		<selenium.version>3.0.0</selenium.version>
 	</properties>
 
 	<dependencies>
@@ -36,7 +36,7 @@
 		<dependency>
 			<groupId>net.masterthought</groupId>
 			<artifactId>cucumber-reporting</artifactId>
-			<version>3.10.0</version>
+			<version>5.6.1</version>
 		</dependency>
 
 		<dependency>
@@ -70,7 +70,7 @@
 		<dependency>
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
-			<version>2.1.0</version>
+			<version>4.0.0</version>
 		</dependency>
 	</dependencies>
 
