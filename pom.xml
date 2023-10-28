@@ -7,7 +7,7 @@
 	<name>maven_cucumber_03_havnm</name>
 
 	<properties>
-		<cucumber.version> 1.2.5 </cucumber.version>
+		<cucumber.version>1.2.6</cucumber.version>
 		<selenium.version> 2.53.1 </selenium.version>
 	</properties>
 
